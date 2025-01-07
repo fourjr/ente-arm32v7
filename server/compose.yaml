@@ -30,7 +30,7 @@ services:
     command: "TCP-LISTEN:3200,fork,reuseaddr TCP:minio:3200"
 
   postgres:
-    image: postgres:15
+    image: arm32v7/postgres:15
     ports:
       - 5432:5432
     environment:
@@ -57,7 +57,7 @@ services:
       - internal
 
   minio:
-    image: minio/minio
+    image: pixelchrome/minio-arm
     # Use different ports than the minio defaults to avoid conflicting
     # with the ports used by Prometheus.
     ports:
@@ -73,7 +73,7 @@ services:
       - internal
 
   minio-provision:
-    image: minio/mc
+    image: altaris/minio-arm
     depends_on:
       - minio
     volumes:
