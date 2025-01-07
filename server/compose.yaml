@@ -57,7 +57,7 @@ services:
       - internal
 
   minio:
-    image: pixelchrome/minio-arm
+    image: fourjr/minio-arm
     # Use different ports than the minio defaults to avoid conflicting
     # with the ports used by Prometheus.
     ports:
@@ -73,7 +73,7 @@ services:
       - internal
 
   minio-provision:
-    image: altaris/minio-arm
+    image: fourjr/minio-mc-arm32v7
     depends_on:
       - minio
     volumes:
