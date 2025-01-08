@@ -57,7 +57,7 @@ services:
       - internal
 
   minio:
-    image: fourjr/minio-arm
+    image: fourjr/minio-arm32v7
     # Use different ports than the minio defaults to avoid conflicting
     # with the ports used by Prometheus.
     ports:
@@ -81,7 +81,7 @@ services:
       - minio-data:/data
     networks:
       - internal
-    entrypoint: sh /provision.sh
+    entrypoint: provision.sh
 
 volumes:
   custom-logs:
