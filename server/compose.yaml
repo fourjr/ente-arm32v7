@@ -81,7 +81,7 @@ services:
       - minio-data:/data
     networks:
       - internal
-    entrypoint: provision.sh
+    entrypoint: sh provision.sh
 
 volumes:
   custom-logs:
